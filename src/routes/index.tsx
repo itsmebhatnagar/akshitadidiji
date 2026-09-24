@@ -178,7 +178,7 @@ function Hero() {
               <img
                 src={portraitAsset}
                 alt="Akshita Kanwar Shekhawat"
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/5] w-full object-cover object-top"
               />
               <div
                 aria-hidden
