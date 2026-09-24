@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Reveal } from "@/components/reveal";
-import portraitAsset from "@/assets/akshita-portrait.jpeg.asset.json";
+import portraitAsset from "@/assets/akshita-portrait.jpeg";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -63,70 +63,65 @@ function Navbar() {
 
   return (
     <>
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || menuOpen
-          ? "border-b border-border bg-background backdrop-blur-md"
-          : "border-b border-transparent bg-background/0"
-      }`}
-    >
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
-        <a
-          href="#top"
-          className="font-display text-lg font-bold tracking-tight text-foreground"
-        >
-          Akshita.
-        </a>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled || menuOpen
+            ? "border-b border-border bg-background backdrop-blur-md"
+            : "border-b border-transparent bg-background/0"
+          }`}
+      >
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
+          <a
+            href="#top"
+            className="font-display text-lg font-bold tracking-tight text-foreground"
+          >
+            Akshita.
+          </a>
 
-        {/* Desktop nav */}
-        <ul className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          {/* Desktop nav */}
+          <ul className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          onClick={() => setMenuOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center md:hidden"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-        >
-          <div className="relative h-4 w-6">
-            <span
-              className={`absolute left-0 h-0.5 w-6 bg-foreground transition-all duration-300 ${
-                menuOpen ? "top-1.5 rotate-45" : "top-0"
-              }`}
-            />
-            <span
-              className={`absolute left-0 top-1.5 h-0.5 w-6 bg-foreground transition-all duration-300 ${
-                menuOpen ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`absolute left-0 h-0.5 w-6 bg-foreground transition-all duration-300 ${
-                menuOpen ? "top-1.5 -rotate-45" : "top-3"
-              }`}
-            />
-          </div>
-        </button>
-      </nav>
-    </header>
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            className="flex h-10 w-10 items-center justify-center md:hidden"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+          >
+            <div className="relative h-4 w-6">
+              <span
+                className={`absolute left-0 h-0.5 w-6 bg-foreground transition-all duration-300 ${menuOpen ? "top-1.5 rotate-45" : "top-0"
+                  }`}
+              />
+              <span
+                className={`absolute left-0 top-1.5 h-0.5 w-6 bg-foreground transition-all duration-300 ${menuOpen ? "opacity-0" : "opacity-100"
+                  }`}
+              />
+              <span
+                className={`absolute left-0 h-0.5 w-6 bg-foreground transition-all duration-300 ${menuOpen ? "top-1.5 -rotate-45" : "top-3"
+                  }`}
+              />
+            </div>
+          </button>
+        </nav>
+      </header>
 
       {/* Mobile menu — full-screen overlay (outside header so backdrop-filter
           on the header doesn't become its containing block) */}
       <div
-        className={`fixed inset-0 top-16 z-40 bg-background transition-opacity duration-300 md:hidden ${
-          menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 top-16 z-40 bg-background transition-opacity duration-300 md:hidden ${menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
       >
         <ul className="flex flex-col px-6 py-6">
           {NAV_LINKS.map((link) => (
@@ -389,11 +384,10 @@ function Education() {
             {EDUCATION.map((entry, i) => (
               <Reveal as="li" key={entry.level} delay={i * 120}>
                 <div
-                  className={`relative mb-10 flex items-start gap-6 md:mb-12 ${
-                    i % 2 === 0
+                  className={`relative mb-10 flex items-start gap-6 md:mb-12 ${i % 2 === 0
                       ? "md:flex-row-reverse md:text-right"
                       : "md:flex-row"
-                  }`}
+                    }`}
                 >
                   <div className="ml-0 w-full md:w-1/2 md:px-10">
                     <div className="border border-border bg-background p-7 transition-colors duration-300 hover:bg-secondary lg:p-8">
@@ -461,11 +455,10 @@ function Journey() {
                 <div className="relative flex items-center gap-6 pb-10 lg:gap-10">
                   <div className="flex flex-col items-center">
                     <span
-                      className={`flex h-3 w-3 items-center justify-center rounded-full ${
-                        isCurrent
+                      className={`flex h-3 w-3 items-center justify-center rounded-full ${isCurrent
                           ? "bg-foreground ring-4 ring-foreground/10"
                           : "bg-foreground"
-                      }`}
+                        }`}
                     />
                     {!isLast && (
                       <span aria-hidden className="mt-1 h-full w-px min-h-[3.5rem] bg-foreground/20" />
@@ -474,23 +467,21 @@ function Journey() {
                   <div className="flex-1 pb-2">
                     <div className="flex flex-wrap items-center gap-3">
                       <h3
-                        className={`font-display tracking-tight ${
-                          isCurrent
+                        className={`font-display tracking-tight ${isCurrent
                             ? "text-3xl font-extrabold text-foreground lg:text-4xl"
                             : isLast
-                            ? "text-2xl font-bold text-muted-foreground lg:text-3xl"
-                            : "text-2xl font-bold text-foreground lg:text-3xl"
-                        }`}
+                              ? "text-2xl font-bold text-muted-foreground lg:text-3xl"
+                              : "text-2xl font-bold text-foreground lg:text-3xl"
+                          }`}
                       >
                         {stage.title}
                       </h3>
                       {stage.note && (
                         <span
-                          className={`border px-2.5 py-1 text-xs font-medium uppercase tracking-wider ${
-                            isCurrent
+                          className={`border px-2.5 py-1 text-xs font-medium uppercase tracking-wider ${isCurrent
                               ? "border-foreground bg-foreground text-background"
                               : "border-border text-muted-foreground"
-                          }`}
+                            }`}
                         >
                           {stage.note}
                         </span>
