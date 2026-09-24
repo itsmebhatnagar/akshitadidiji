@@ -176,7 +176,7 @@ function Hero() {
           <div className="relative mx-auto w-full max-w-[16rem] sm:max-w-[20rem] md:max-w-none">
             <div className="relative overflow-hidden rounded-[1.75rem] bg-secondary shadow-[0_24px_60px_-24px_rgba(17,17,17,0.22)] ring-1 ring-black/5">
               <img
-                src={portraitAsset.url}
+                src={portraitAsset}
                 alt="Akshita Kanwar Shekhawat"
                 className="aspect-[4/5] w-full object-cover"
               />
