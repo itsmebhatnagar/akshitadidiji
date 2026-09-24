@@ -7,27 +7,27 @@ export const Route = createFileRoute("/")({
   component: Portfolio,
   head: () => ({
     meta: [
-      { title: "Akshita Kanwar Shekhawat | B.Tech Computer Science Student" },
+      { title: "Akshita Shekhawat" },
       {
         name: "description",
         content:
-          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Computer Science student at Anand International College of Engineering.",
+          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Artificial Intelligence Student at Anand International College of Engineering.",
       },
       { name: "author", content: "Akshita Kanwar Shekhawat" },
-      { property: "og:title", content: "Akshita Kanwar Shekhawat | B.Tech Computer Science Student" },
+      { property: "og:title", content: "Akshita Shekhawat" },
       {
         property: "og:description",
         content:
-          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Computer Science student at Anand International College of Engineering.",
+          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Artificial Intelligence Student at Anand International College of Engineering.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Akshita Kanwar Shekhawat | B.Tech Computer Science Student" },
+      { name: "twitter:title", content: "Akshita Shekhawat" },
       {
         name: "twitter:description",
         content:
-          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Computer Science student at Anand International College of Engineering.",
+          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Artificial Intelligence Student at Anand International College of Engineering.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -65,8 +65,8 @@ function Navbar() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled || menuOpen
-            ? "border-b border-border bg-background backdrop-blur-md"
-            : "border-b border-transparent bg-background/0"
+          ? "border-b border-border bg-background backdrop-blur-md"
+          : "border-b border-transparent bg-background/0"
           }`}
       >
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
@@ -165,7 +165,7 @@ function Hero() {
 
           <Reveal delay={240}>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              I'm a third-year Computer Science student at Anand International
+              I'm a third-year Artificial Intelligence Student at Anand International
               College of Engineering, building a strong foundation in programming
               while continuously expanding my technical knowledge.
             </p>
@@ -385,8 +385,8 @@ function Education() {
               <Reveal as="li" key={entry.level} delay={i * 120}>
                 <div
                   className={`relative mb-10 flex items-start gap-6 md:mb-12 ${i % 2 === 0
-                      ? "md:flex-row-reverse md:text-right"
-                      : "md:flex-row"
+                    ? "md:flex-row-reverse md:text-right"
+                    : "md:flex-row"
                     }`}
                 >
                   <div className="ml-0 w-full md:w-1/2 md:px-10">
@@ -456,8 +456,8 @@ function Journey() {
                   <div className="flex flex-col items-center">
                     <span
                       className={`flex h-3 w-3 items-center justify-center rounded-full ${isCurrent
-                          ? "bg-foreground ring-4 ring-foreground/10"
-                          : "bg-foreground"
+                        ? "bg-foreground ring-4 ring-foreground/10"
+                        : "bg-foreground"
                         }`}
                     />
                     {!isLast && (
@@ -468,10 +468,10 @@ function Journey() {
                     <div className="flex flex-wrap items-center gap-3">
                       <h3
                         className={`font-display tracking-tight ${isCurrent
-                            ? "text-3xl font-extrabold text-foreground lg:text-4xl"
-                            : isLast
-                              ? "text-2xl font-bold text-muted-foreground lg:text-3xl"
-                              : "text-2xl font-bold text-foreground lg:text-3xl"
+                          ? "text-3xl font-extrabold text-foreground lg:text-4xl"
+                          : isLast
+                            ? "text-2xl font-bold text-muted-foreground lg:text-3xl"
+                            : "text-2xl font-bold text-foreground lg:text-3xl"
                           }`}
                       >
                         {stage.title}
@@ -479,8 +479,8 @@ function Journey() {
                       {stage.note && (
                         <span
                           className={`border px-2.5 py-1 text-xs font-medium uppercase tracking-wider ${isCurrent
-                              ? "border-foreground bg-foreground text-background"
-                              : "border-border text-muted-foreground"
+                            ? "border-foreground bg-foreground text-background"
+                            : "border-border text-muted-foreground"
                             }`}
                         >
                           {stage.note}
