@@ -209,7 +209,7 @@ function About() {
         <div className="lg:col-span-8">
           <Reveal delay={120}>
             <p className="text-xl leading-relaxed text-foreground sm:text-2xl lg:leading-relaxed">
-              I'm currently pursuing my B.Tech in Computer Science at Anand
+              I'm currently pursuing my B.Tech in Artificial Intelligence at Anand
               International College of Engineering. My focus is on strengthening
               my programming fundamentals, learning new technologies and gradually
               turning what I learn into practical work.
@@ -343,7 +343,7 @@ type EduEntry = {
 
 const EDUCATION: EduEntry[] = [
   {
-    level: "B.Tech — Computer Science",
+    level: "B.Tech — Artificial Intelligence",
     institution: "Anand International College of Engineering",
     detail: "3rd Year",
   },
