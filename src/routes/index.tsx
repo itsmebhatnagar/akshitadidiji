@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Reveal } from "@/components/reveal";
-import portraitAsset from "@/assets/akshita-portrait.jpeg";
+import portraitAsset from "@/assets/akshita-portrait.webp";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -65,8 +65,8 @@ function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled || menuOpen
-          ? "border-b border-border bg-background backdrop-blur-md"
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${scrolled || menuOpen
+          ? "border-b border-border bg-background"
           : "border-b border-transparent bg-background/0"
           }`}
       >
@@ -150,7 +150,7 @@ function Hero() {
     >
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-12 md:gap-12 lg:gap-16">
         <div className="md:col-span-7">
-          <Reveal delay={80}>
+          <Reveal>
             <h1 className="mt-8 font-display text-5xl font-extrabold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-6xl lg:text-[5rem]">
               Akshita Kanwar
               <br />
@@ -158,13 +158,13 @@ function Hero() {
             </h1>
           </Reveal>
 
-          <Reveal delay={160}>
+          <Reveal>
             <p className="mt-7 max-w-2xl font-display text-xl font-medium leading-snug text-foreground sm:text-2xl lg:text-[1.9rem]">
               Learning, growing, and building my path in technology.
             </p>
           </Reveal>
 
-          <Reveal delay={240}>
+          <Reveal>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               I'm a third-year Artificial Intelligence Student at Anand International
               College of Engineering, building a strong foundation in programming
@@ -173,13 +173,18 @@ function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={200} className="md:col-span-5">
+        <Reveal className="md:col-span-5">
           <div className="relative mx-auto w-full max-w-[16rem] sm:max-w-[20rem] md:max-w-none">
             <div className="relative overflow-hidden rounded-[1.75rem] bg-secondary shadow-[0_24px_60px_-24px_rgba(17,17,17,0.22)] ring-1 ring-black/5">
               <img
                 src={portraitAsset}
                 alt="Akshita Kanwar Shekhawat"
                 className="aspect-[4/5] w-full object-cover object-top"
+                width={800}
+                height={1066}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
               <div
                 aria-hidden
@@ -208,7 +213,7 @@ function About() {
           </Reveal>
         </div>
         <div className="lg:col-span-8">
-          <Reveal delay={120}>
+          <Reveal>
             <p className="text-xl leading-relaxed text-foreground sm:text-2xl lg:leading-relaxed">
               I'm currently pursuing my B.Tech in Artificial Intelligence at Anand
               International College of Engineering. My focus is on strengthening
@@ -259,7 +264,7 @@ function Skills() {
               Technical Foundation
             </h2>
           </Reveal>
-          <Reveal delay={120}>
+          <Reveal>
             <p className="mt-4 text-lg text-muted-foreground">
               Programming languages I've learned and currently practice.
             </p>
@@ -268,7 +273,7 @@ function Skills() {
 
         <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-3">
           {SKILLS.map((skill, i) => (
-            <Reveal key={skill.name} delay={i * 100} className="h-full">
+            <Reveal key={skill.name} className="h-full">
               <article className="flex h-full flex-col bg-background p-8 transition-colors duration-300 hover:bg-secondary lg:p-10">
                 <div className="flex items-start justify-between">
                   <h3 className="font-display text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
@@ -305,7 +310,7 @@ function CurrentlyLearning() {
           </Reveal>
         </div>
 
-        <Reveal delay={120}>
+        <Reveal>
           <div className="relative mt-14 overflow-hidden border border-border bg-secondary p-10 lg:p-16">
             <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-xl">
@@ -383,7 +388,7 @@ function Education() {
               className="absolute left-4 top-2 bottom-2 w-px bg-foreground/25 md:left-1/2"
             />
             {EDUCATION.map((entry, i) => (
-              <Reveal as="li" key={entry.level} delay={i * 120}>
+              <Reveal as="li" key={entry.level}>
                 <div
                   className={`relative mb-10 flex items-start gap-6 md:mb-12 ${i % 2 === 0
                     ? "md:flex-row-reverse md:text-right"
@@ -492,7 +497,7 @@ function Extracurricular() {
               Extracurricular
             </h2>
           </Reveal>
-          <Reveal delay={120}>
+          <Reveal>
             <p className="mt-4 text-lg text-muted-foreground">
               Leadership, creativity, and collaboration beyond the classroom.
             </p>
@@ -500,7 +505,7 @@ function Extracurricular() {
         </div>
 
         {/* Profile card */}
-        <Reveal delay={160}>
+        <Reveal>
           <div className="relative mt-14 overflow-hidden border border-border bg-background p-8 lg:p-12">
             <div className="relative z-10">
               {/* Role badge */}
@@ -522,7 +527,7 @@ function Extracurricular() {
               {/* Responsibilities grid */}
               <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {CLUB_RESPONSIBILITIES.map((item, i) => (
-                  <Reveal key={item.title} delay={i * 60}>
+                  <Reveal key={item.title}>
                     <div className="group flex flex-col gap-3 border border-border bg-secondary p-6 transition-colors duration-300 hover:bg-background">
                       <span className="font-display text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {item.icon}
@@ -539,7 +544,7 @@ function Extracurricular() {
               </div>
 
               {/* Summary tagline */}
-              <Reveal delay={500}>
+              <Reveal>
                 <p className="mt-10 max-w-2xl text-lg leading-relaxed text-muted-foreground">
                   Leading the Photography Club means blending creative vision with
                   organisational discipline — from the first shutter click to the
@@ -588,7 +593,7 @@ function Journey() {
             const isLast = i === JOURNEY.length - 1;
             const isCurrent = stage.note === "Currently Learning";
             return (
-              <Reveal as="li" key={stage.title} delay={i * 90}>
+              <Reveal as="li" key={stage.title}>
                 <div className="relative flex items-center gap-6 pb-10 lg:gap-10">
                   <div className="flex flex-col items-center">
                     <span
@@ -650,12 +655,12 @@ function WhatsNext() {
             07
           </span>
         </Reveal>
-        <Reveal delay={80}>
+        <Reveal>
           <h2 className="mt-4 font-display text-6xl font-extrabold leading-[0.95] tracking-tight text-foreground sm:text-7xl lg:text-8xl xl:text-9xl">
             What's Next?
           </h2>
         </Reveal>
-        <Reveal delay={160}>
+        <Reveal>
           <p className="mt-10 max-w-2xl text-2xl leading-relaxed text-foreground lg:text-3xl lg:leading-relaxed">
             Keep learning. Strengthen my fundamentals. Explore new technologies.
             And eventually turn what I learn into projects that solve real problems.
@@ -695,13 +700,13 @@ function Contact() {
             </Reveal>
           </div>
           <div className="lg:col-span-7">
-            <Reveal delay={120}>
+            <Reveal>
               <p className="text-xl leading-relaxed text-muted-foreground sm:text-2xl">
                 Whether it's about technology, learning, or simply connecting,
                 feel free to reach out.
               </p>
             </Reveal>
-            <Reveal delay={200}>
+            <Reveal>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 {CONTACT_ITEMS.map((item) => (
                   <a
