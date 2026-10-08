@@ -39,6 +39,7 @@ const NAV_LINKS = [
   { label: "Skills", href: "#skills" },
   { label: "Learning", href: "#learning" },
   { label: "Education", href: "#education" },
+  { label: "Activities", href: "#extracurricular" },
   { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
 ] as const;
@@ -417,6 +418,142 @@ function Education() {
   );
 }
 
+type ClubResponsibility = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+const CLUB_RESPONSIBILITIES: ClubResponsibility[] = [
+  {
+    icon: "01",
+    title: "Shoot Coordination",
+    description:
+      "Plan and coordinate photography shoots — scouting locations, scheduling sessions, and briefing team members on creative direction.",
+  },
+  {
+    icon: "02",
+    title: "Editing Oversight",
+    description:
+      "Review and approve photo and video edits, working closely with editors to maintain a consistent visual style across all club content.",
+  },
+  {
+    icon: "03",
+    title: "Reels & Content Ideas",
+    description:
+      "Brainstorm and ideate concepts for Instagram Reels and short-form video content, staying up-to-date with trends and creative formats.",
+  },
+  {
+    icon: "04",
+    title: "Recorder & Editor Liaison",
+    description:
+      "Act as the main point of contact between recorders and editors — ensuring smooth handoff of raw footage and clear communication of revisions.",
+  },
+  {
+    icon: "05",
+    title: "Edit Approvals",
+    description:
+      "Final sign-off authority on all edited content before publishing, ensuring quality, brand consistency, and event representation.",
+  },
+  {
+    icon: "06",
+    title: "Faculty Advisor Coordination",
+    description:
+      "Maintain regular communication with the faculty advisor, seeking guidance, presenting plans, and obtaining approvals for club activities.",
+  },
+  {
+    icon: "07",
+    title: "Team Management",
+    description:
+      "Lead and manage the Photography Club team — assigning roles, motivating members, resolving conflicts, and fostering a collaborative creative environment.",
+  },
+  {
+    icon: "08",
+    title: "Instagram Page Management",
+    description:
+      "Manage the official Student Council Instagram page (@studentcouncillaice) — curating content, scheduling posts, and maintaining a consistent presence for the college.",
+  },
+];
+
+function Extracurricular() {
+  return (
+    <section
+      id="extracurricular"
+      className="border-t border-border bg-secondary px-6 py-24 lg:px-8 lg:py-32"
+    >
+      <div className="mx-auto w-full max-w-6xl">
+        {/* Section header */}
+        <div className="max-w-2xl">
+          <Reveal>
+            <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              05
+            </span>
+            <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
+              Extracurricular
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Leadership, creativity, and collaboration beyond the classroom.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Profile card */}
+        <Reveal delay={160}>
+          <div className="relative mt-14 overflow-hidden border border-border bg-background p-8 lg:p-12">
+            <div className="relative z-10">
+              {/* Role badge */}
+              <span className="inline-flex items-center gap-2 bg-foreground px-3 py-1 text-xs font-semibold uppercase tracking-wider text-background">
+                Student Council
+              </span>
+
+              {/* Title */}
+              <h3 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-foreground lg:text-4xl">
+                Captain — Photography Club
+              </h3>
+              <p className="mt-1 text-base font-medium text-muted-foreground">
+                Anand International College of Engineering
+              </p>
+
+              {/* Divider */}
+              <div className="mt-8 h-px w-full bg-border" />
+
+              {/* Responsibilities grid */}
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {CLUB_RESPONSIBILITIES.map((item, i) => (
+                  <Reveal key={item.title} delay={i * 60}>
+                    <div className="group flex flex-col gap-3 border border-border bg-secondary p-6 transition-colors duration-300 hover:bg-background">
+                      <span className="font-display text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                        {item.icon}
+                      </span>
+                      <h4 className="font-display text-base font-bold tracking-tight text-foreground">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+
+              {/* Summary tagline */}
+              <Reveal delay={500}>
+                <p className="mt-10 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                  Leading the Photography Club means blending creative vision with
+                  organisational discipline — from the first shutter click to the
+                  final published reel.
+                </p>
+              </Reveal>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 type Stage = {
   title: string;
   note?: string;
@@ -438,7 +575,7 @@ function Journey() {
         <div className="max-w-2xl">
           <Reveal>
             <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-              05
+              06
             </span>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
               My Learning Journey
@@ -510,7 +647,7 @@ function WhatsNext() {
       <div className="mx-auto w-full max-w-6xl">
         <Reveal>
           <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            06
+            07
           </span>
         </Reveal>
         <Reveal delay={80}>
@@ -550,7 +687,7 @@ function Contact() {
           <div className="lg:col-span-5">
             <Reveal>
               <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                07
+                08
               </span>
               <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
                 Let's Connect
@@ -616,6 +753,7 @@ function Portfolio() {
         <Skills />
         <CurrentlyLearning />
         <Education />
+        <Extracurricular />
         <Journey />
         <WhatsNext />
         <Contact />
