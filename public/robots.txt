@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akshitashekhawat.vercel.app/sitemap.xml

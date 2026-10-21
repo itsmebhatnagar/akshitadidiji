@@ -76,14 +76,36 @@ export const Route = createRootRouteWithContext()({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      {
+        name: "google-site-verification",
+        content: "MAgZMQaZ19Vd5Ue0IsOXHnJrkcWTFtxaHMF5kjWUA0E",
+      },
+      {
+        name: "description",
+        content:
+          "Akshita Kanwar Shekhawat's portfolio - an Artificial Intelligence student at Anand International College of Engineering, sharing her skills, education, projects, and journey in technology.",
+      },
+      { name: "author", content: "Akshita Kanwar Shekhawat" },
+      {
+        property: "og:title",
+        content: "Akshita Kanwar Shekhawat | AI Student Portfolio",
+      },
+      {
+        property: "og:description",
+        content:
+          "Explore Akshita Kanwar Shekhawat's portfolio, education, technical skills, and journey as an Artificial Intelligence student.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      {
+        name: "twitter:title",
+        content: "Akshita Kanwar Shekhawat | AI Student Portfolio",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Explore Akshita Kanwar Shekhawat's portfolio, education, technical skills, and journey as an Artificial Intelligence student.",
+      },
     ],
     links: [
       {

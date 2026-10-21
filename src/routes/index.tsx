@@ -7,30 +7,30 @@ export const Route = createFileRoute("/")({
   component: Portfolio,
   head: () => ({
     meta: [
-      { title: "Akshita Shekhawat" },
+      { title: "Akshita Kanwar Shekhawat | AI Student Portfolio" },
       {
         name: "description",
         content:
-          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Artificial Intelligence Student at Anand International College of Engineering.",
+          "Explore the portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Artificial Intelligence student at Anand International College of Engineering. Discover her technical skills, education, and journey in technology.",
       },
       { name: "author", content: "Akshita Kanwar Shekhawat" },
-      { property: "og:title", content: "Akshita Shekhawat" },
+      { property: "og:title", content: "Akshita Kanwar Shekhawat | AI Student Portfolio" },
       {
         property: "og:description",
         content:
-          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Artificial Intelligence Student at Anand International College of Engineering.",
+          "Explore Akshita Kanwar Shekhawat's portfolio, education, technical skills, and journey as an Artificial Intelligence student.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://akshitashekhawat.vercel.app/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Akshita Shekhawat" },
+      { name: "twitter:title", content: "Akshita Kanwar Shekhawat | AI Student Portfolio" },
       {
         name: "twitter:description",
         content:
-          "Portfolio of Akshita Kanwar Shekhawat, a third-year B.Tech Artificial Intelligence Student at Anand International College of Engineering.",
+          "Explore Akshita Kanwar Shekhawat's portfolio, education, technical skills, and journey as an Artificial Intelligence student.",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://akshitashekhawat.vercel.app/" }],
   }),
 });
 
